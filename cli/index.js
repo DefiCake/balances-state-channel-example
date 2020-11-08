@@ -28,6 +28,8 @@ const provider = new HDWalletProvider({ privateKeys, providerOrUrl: endpoint });
 const web3 = new Web3(provider);
 const contract = new web3.eth.Contract(abi, address);
 
+// This function signs a new state between Alice and Bob and commits it to
+// the local database
 const signReceipt = async ({ balance0, balance1, nonce }) => {
   const [alice, bob] = await web3.eth.getAccounts();
 
@@ -55,6 +57,8 @@ const signReceipt = async ({ balance0, balance1, nonce }) => {
   fs.writeJSONSync(RECEIPTS_DATABASE_PATH, receipts);
 };
 
+// This function makes an onchain transaction to update channel state.
+// There is no challenge period for these updates, be aware.
 const updateChannel = async () => {
   const [alice, bob] = await web3.eth.getAccounts();
 
@@ -136,6 +140,8 @@ const updateChannel = async () => {
   fs.writeJSONSync(RECEIPTS_DATABASE_PATH, receipts);
 };
 
+// Closes the current channel state and unlocks funds.
+// No challenge period, be aware
 const resetChannel = async () => {
   const [alice, bob] = await web3.eth.getAccounts();
 
