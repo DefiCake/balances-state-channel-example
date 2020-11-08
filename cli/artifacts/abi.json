@@ -1,0 +1,445 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "channelId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "participant0",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "participant1",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "balance0",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "balance1",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint96",
+        "name": "nonce",
+        "type": "uint96"
+      }
+    ],
+    "name": "ChannelUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "balances",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "channels",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "participant0",
+        "type": "address"
+      },
+      {
+        "internalType": "uint96",
+        "name": "nonce",
+        "type": "uint96"
+      },
+      {
+        "internalType": "address",
+        "name": "participant1",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "balance0",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "balance1",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "usedHashes",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "mint",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "mintTo",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "participant0",
+            "type": "address"
+          },
+          {
+            "internalType": "uint96",
+            "name": "nonce",
+            "type": "uint96"
+          },
+          {
+            "internalType": "address",
+            "name": "participant1",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance1",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct BalancesStateChannel.ChannelState",
+        "name": "newChannelState",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sig0",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sig1",
+        "type": "bytes"
+      }
+    ],
+    "name": "updateChannelState",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "participant0",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "participant1",
+        "type": "address"
+      }
+    ],
+    "name": "resetChannelState",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "participant0",
+            "type": "address"
+          },
+          {
+            "internalType": "uint96",
+            "name": "nonce",
+            "type": "uint96"
+          },
+          {
+            "internalType": "address",
+            "name": "participant1",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance1",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct BalancesStateChannel.ChannelState",
+        "name": "state",
+        "type": "tuple"
+      }
+    ],
+    "name": "hashState",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "participant0",
+            "type": "address"
+          },
+          {
+            "internalType": "uint96",
+            "name": "nonce",
+            "type": "uint96"
+          },
+          {
+            "internalType": "address",
+            "name": "participant1",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance1",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct BalancesStateChannel.ChannelState",
+        "name": "state",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sig0",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sig1",
+        "type": "bytes"
+      }
+    ],
+    "name": "debugRecoveryWithStruct",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_hash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "recv0",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "recv1",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_hash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sig0",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "sig1",
+        "type": "bytes"
+      }
+    ],
+    "name": "debugRecoveryWithHash",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "recv0",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "recv1",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "participant0",
+            "type": "address"
+          },
+          {
+            "internalType": "uint96",
+            "name": "nonce",
+            "type": "uint96"
+          },
+          {
+            "internalType": "address",
+            "name": "participant1",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance1",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct BalancesStateChannel.ChannelState",
+        "name": "previousChannelState",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "participant0",
+            "type": "address"
+          },
+          {
+            "internalType": "uint96",
+            "name": "nonce",
+            "type": "uint96"
+          },
+          {
+            "internalType": "address",
+            "name": "participant1",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance1",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct BalancesStateChannel.ChannelState",
+        "name": "newChannelState",
+        "type": "tuple"
+      }
+    ],
+    "name": "_requireValidTransition",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]
